@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Knoten
+comment0.text=\ Eine\ simple\ Knoten-Klasse\ f\u00FCr\ einen\ Bin\u00E4ren\ Baum\r\n\ Object\ element\:\ \ \ \ \ \ \ \ \ \ Eine\ Variable\ zust\u00E4ndig\ f\u00FCr\ das\ Speichern\ des\ Wertes,\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ der\ Wurzel,\ variabler\ Datentyp\r\n\ Knoten\ links,\ rechts\:\ \ \ \ Die\ n\u00E4chsten\ Knoten\r\n
+comment1.params=o
+comment1.target=Knoten(java.lang.Object)
+comment2.params=
+comment2.target=Knoten\ gibLinks()
+comment3.params=
+comment3.target=Knoten\ gibRechts()
+comment4.params=
+comment4.target=boolean\ hatLinks()
+comment5.params=
+comment5.target=boolean\ hatRechts()
+numComments=6

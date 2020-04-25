@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=MorseBaum
+comment0.text=\ \r\n\ Eine\ Morsebaum\ Klasse\:\r\n\ Als\ Wert\ gespeichert\ sind\ nur\ die\ Buchstaben,\ der\ Morse\ ist\ mit\ dem\ Weg\r\n\ entlang\ des\ Astes\ dargestellt.\ Entlang\ des\ linken\ Astes\ stellt\ ein\ Punkt\ dar,\r\n\ entlang\ des\ rechten\ Astes\ stellt\ ein\ Strich\ dar.\r\n
+comment1.params=
+comment1.target=MorseBaum()
+comment2.params=morseCode\ buchstabe
+comment2.target=void\ fuegeMorseCodeZuBaum(java.lang.String,\ java.lang.String)
+comment2.text=\ \r\n\ Die\ Methode\ um\ den\ Morsecode\ dem\ Baum\ zu\ \u00FCbergeben.\ Funktioniert\ wie\ folgt\:\r\n\ Der\ Methode\ wird\ sowohl\ der\ Buchstabe\ des\ Morsecodes\ gegeben,\ als\ auch\ der\ Code\ selbst.\r\n\ Der\ Code\ wird\ nicht\ in\ den\ Knoten\ gespeichert,\ er\ wird\ lediglich\ genutzt\ um\ entlang\ des\ Weges\r\n\ zu\ gehen.\ Dabei\ ist\ links\ \=\ Punkt,\ rechts\ \=\ Strich.\ Der\ Buchstabe\ wird\ im\ Knoten\ gespeichert.\r\n\ Die\ Methode\ funktioniert\ nach\ dem\ Prinzip,\ jeden\ Buchstaben\ des\ Morsecodes\ einzeln\ anzusehen\ und\ dann\r\n\ zu\ entscheiden\ ob\ man\ links\ oder\ rechts\ weitergeht.\ Kommt\ man\ dabei\ an\ einen\ ung\u00FCltigen\ Knoten,\ wird\ ein\ neuer\ erstellt.\r\n\ Benutzt\ wird\ daf\u00FCr\ eine\ for-Schleife\ und\ der\ Java-Befehl\ String.substring(int\ beginIndex,\ int\ endIndex)\r\n\ Benutzte\ Hilfen\:\ https\://beginnersbook.com/2013/12/java-string-substring-method-example/\r\n
+comment3.params=morseCode
+comment3.target=java.lang.String\ uebersetze(java.lang.String)
+comment3.text=\r\n\ Die\ eigentliche\ Methode\ zum\ \u00DCbersetzen,\ kann\ jedoch\ nur\ ein\ Zeichen\ \u00FCbersetzen,\ ohne\ Leerzeichen\ zwischen\ den\ Zeichen\r\n\ erkennt\ man\ nicht\ eindeutig\ das\ Zeichen.\ Funktioniert\ nach\ dem\ gleichen\ Prinzip\ wie\ die\ Methode\ zum\ Hinzuf\u00FCgen,\ jedoch\ mit\ dem\r\n\ Unterschied,\ das\ keine\ neuen\ Knoten\ erzeugt\ werden\ und\ eine\ R\u00FCckgabe\ des\ an\ der\ Endposition\ befindenden\ Knoten\ gibt\ (sollte\ es\ einen\ geben)\r\n
+numComments=4
