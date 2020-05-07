@@ -1,15 +1,30 @@
 /* Eine simple Knoten-Klasse für einen Binären Baum
- * Object element:          Eine Variable zuständig für das Speichern des Wertes,
- *                          der Wurzel, variabler Datentyp
+ * String element:          Eine Variable zuständig für das Speichern des Wertes,
+ *                          der Wurzel, ein String
  * Knoten links, rechts:    Die nächsten Knoten
  */
 class Knoten {
-    Object element;
-    Knoten links, rechts;
-
-    Knoten(Object o) {  
+    String element;
+    Knoten links, rechts, parent;
+    Relation relationZuParent;
+    
+    Knoten(String o, Knoten pParent, Relation pRelation) {  
         element = o;
         links = rechts = null;
+        parent = pParent;
+        relationZuParent = pRelation;
+    }
+    
+    String gibWert() {
+        return element;
+    }
+    
+    Relation gibRelation() {
+        return relationZuParent;
+    }
+    
+    Knoten gibParent() {
+        return parent;
     }
     
     Knoten gibLinks() {

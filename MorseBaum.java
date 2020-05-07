@@ -8,7 +8,7 @@
 class MorseBaum {
     Knoten wurzel;
     MorseBaum() {
-        wurzel = new Knoten(null);
+        wurzel = new Knoten(null, null, Relation.ROOT);
     }
     
     /* 
@@ -41,7 +41,7 @@ class MorseBaum {
             if (weg.equals(".")) {
                 /* Prüfe zunächst ob links gültig und somit überhaupt benutzbar ist, wenn nicht mach den Knoten gültig */
                 if (!position.hatLinks())
-                    position.links = new Knoten(null);
+                    position.links = new Knoten(null, position, Relation.LEFT);
                 
                 /* Gehe zum linken Knoten und führe die Schleife eventuell weiter aus */
                 position = position.gibLinks();
@@ -52,7 +52,7 @@ class MorseBaum {
             else if (weg.equals("_")) {
                 /* Prüfe zunächst ob rechts gültig und somit überhaupt benutzbar ist, wenn nicht mach den Knoten gültig */
                 if (!position.hatRechts())
-                    position.rechts = new Knoten(null);
+                    position.rechts = new Knoten(null, position, Relation.RIGHT);
                 
                 /* Gehe zum Rechten Knoten und führe die Schleife eventuell weiter aus */
                 position = position.gibRechts();

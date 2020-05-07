@@ -6,7 +6,7 @@ public class main
     public main()
     {
         baum = new MorseBaum();
-        
+
         /* Füge alle Buchstaben des Alphabets hinzu */
         baum.fuegeMorseCodeZuBaum("._", "A");
         baum.fuegeMorseCodeZuBaum("_...", "B");
@@ -34,19 +34,19 @@ public class main
         baum.fuegeMorseCodeZuBaum("_.._", "X");
         baum.fuegeMorseCodeZuBaum("_.__", "Y");
         baum.fuegeMorseCodeZuBaum("__..", "Z");
-        
+        baum.wurzel.element = "";
         /* Test um die Funktion zu überprüfen*/
         // System.out.println(baum.uebersetze("__.."));
-        
+
         // System.out.println(uebersetzeSatz(".... ._ ._.. ._.. ___",baum));
-        
+
         /* Konsoleneingaben lesen */
         Scanner eingabeLeser = new Scanner(System.in);
         System.out.println("Geben Sie einen Morsecode ein, ein Strich ist _ (Unterstrich) und ein Punkt ein ganz normaler .");
         String eingabe = eingabeLeser.nextLine();
-        System.out.println(uebersetzeSatz(eingabe, baum));
+        System.out.println(encodeViaRelations(eingabe));
     }
-    
+
     /* 
      * Das Problem: die Methode in der MorseBaum Klasse ist nicht dazu fähig mehrere Buchstaben zu Übersetzen,
      * sie kann an den Leerzeichen nicht "aufhören" und dann ein neuen Buchstaben anfangen. Also machen wir das hier. 
@@ -63,7 +63,7 @@ public class main
          * und in ein Array von Strings gegeben
          */
         String[] zeichenArray = pEingabe.split(" ");
-        
+
         /* 
          * Eine sogenannte for each-Schleife, hier wird nicht wie bei einer normalen for-Schleife mithilfe einer Variable iteriert, sondern es wird durch 
          * alle Objekte eines Arrays iteriert, viel einfacher als eine for-Schleife dafür zu benutzen.
@@ -72,7 +72,60 @@ public class main
             /* Addiere einfach den übersetzten Buchstaben auf die bisher übersetzten Buchstaben, es sollte am Ende jeder Buchstabe übersetzt sein */
             uebersetzung += pBaum.uebersetze(a);
         }
-        
+
         return uebersetzung;
+    }
+
+    public Knoten preOrderSearch(Knoten pNode, String pVal) {
+        if(pNode != null) {
+            if (pNode.gibWert().equals(pVal)) {
+                return pNode;
+            }
+            else {
+                Knoten recursiveLeft = preOrderSearch(pNode.gibLinks(), pVal);
+
+                if (recursiveLeft != null)
+                    return recursiveLeft;
+
+                return preOrderSearch(pNode.gibRechts(), pVal);
+            }
+        }
+        else
+            return null;
+    }
+
+    public String encodeViaRelations(String pText) {
+        String encodedText = "";
+
+        for (int i = 0; i < pText.length(); i++) {
+            String morseKey = "";
+            ArrayList<Relation> relations = new ArrayList<>();
+            String currentLetter = pText.substring(i, i + 1);
+            Knoten node = preOrderSearch(baum.wurzel, currentLetter);
+
+            while (node != null) {
+                if (node.gibRelation() == Relation.LEFT) {
+                    relations.add(Relation.LEFT);
+                    node = node.gibParent();
+                }
+                else if (node.gibRelation() == Relation.RIGHT) {
+                    relations.add(Relation.RIGHT);
+                    node = node.gibParent();
+                }
+                else if (node.gibRelation() == Relation.ROOT){
+                    break;
+                }
+            }
+
+            for (int j = relations.size() - 1; j >= 0; j--) {
+                if (relations.get(j) == Relation.LEFT)
+                    morseKey += ".";
+                else if (relations.get(j) == Relation.RIGHT)
+                    morseKey += "-";
+            }
+
+            encodedText += morseKey += " ";
+        }
+        return encodedText;
     }
 }
