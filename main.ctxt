@@ -1,12 +1,4 @@
 #BlueJ class context
-comment0.target=main
-comment1.params=
-comment1.target=main()
-comment2.params=pEingabe\ pBaum
-comment2.target=java.lang.String\ uebersetzeSatz(java.lang.String,\ MorseBaum)
-comment2.text=\ \r\n\ Das\ Problem\:\ die\ Methode\ in\ der\ MorseBaum\ Klasse\ ist\ nicht\ dazu\ f\u00E4hig\ mehrere\ Buchstaben\ zu\ \u00DCbersetzen,\r\n\ sie\ kann\ an\ den\ Leerzeichen\ nicht\ "aufh\u00F6ren"\ und\ dann\ ein\ neuen\ Buchstaben\ anfangen.\ Also\ machen\ wir\ das\ hier.\ \r\n\ Daf\u00FCr\ muss\ der\ Methode\ ein\ String\ gegeben\ werden,\ in\ der\ die\ einzelnen\ Morsezeichen\ durch\ Leerzeichen\ getrennt\ werden.\ \r\n\ Es\ wird\ anschlie\u00DFend\ am\ Leerzeichen\ der\ String\ in\ verschiedene\ Strings\ gesplitted\ um\ Sie\ einzeln\ zu\ \u00DCbersetzen\ und\ am\ Ende\ zueinanderzuf\u00FCgen.\r\n\ Leider\ hatte\ ich\ keine\ Idee\ mehr,\ wie\ ich\ sogar\ einzelne\ W\u00F6rter\ trennen\ k\u00F6nnte,\ aber\ naja,\ wenigstens\ wird\ \u00FCbersetzt.\r\n
-comment3.params=pNode\ pVal
-comment3.target=Knoten\ preOrderSearch(Knoten,\ java.lang.String)
-comment4.params=pText
-comment4.target=java.lang.String\ encodeViaRelations(java.lang.String)
-numComments=5
+comment0.params=
+comment0.target=main()
+numComments=1
